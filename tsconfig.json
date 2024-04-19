@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "jsx": "react-jsx"
+    },
+    "include": [
+        "src"
+    ]
+}
+// these are necessary options to prevent errors from React UMD global import
