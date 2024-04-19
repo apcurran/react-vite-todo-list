@@ -1,8 +1,11 @@
 // import { useState } from "react";
+import NewTodoForm from "./components/new-todo-form/NewTodoForm";
 
 function App() {
     return (
-        <h1>Hello World</h1>
+        <div className="wrapper">
+            <NewTodoForm />
+        </div>
     );
 }
 
