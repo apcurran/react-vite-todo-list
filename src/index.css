@@ -12,3 +12,11 @@ body {
   width: min(90%, 25rem);
   margin-inline: auto;
 }
+
+button {
+  font-size: 1rem;
+  border: none;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+}

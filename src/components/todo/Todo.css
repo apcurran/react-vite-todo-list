@@ -1,9 +1,21 @@
 @scope (.todo) {
     :scope {
         margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
     }
 
     p {
         margin: 0;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+    }
+
+    button {
+        padding: .25rem .5rem;
     }
 }
