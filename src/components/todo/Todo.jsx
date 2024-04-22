@@ -2,7 +2,9 @@ import "./Todo.css";
 
 function Todo({ description }) {
     return (
-        <li className="todo">{description}</li>
+        <li className="todo">
+            <p>{description}</p>
+        </li>
     );
 }
 
