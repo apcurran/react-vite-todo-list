@@ -1,6 +1,8 @@
-function Todo() {
+import "./Todo.css";
+
+function Todo({ description }) {
     return (
-        
+        <li className="todo">{description}</li>
     );
 }
 
