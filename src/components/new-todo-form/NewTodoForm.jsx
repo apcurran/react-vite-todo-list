@@ -1,12 +1,32 @@
+import { useState } from "react";
+
 import "./NewTodoForm.css";
 
-function NewTodoForm() {
+function NewTodoForm({ setMyTodos }) {
+    const [newTodoDescription, setNewTodoDescription] = useState("");
+
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        // do not add blank todo to list
+        if (newTodoDescription === "") return;
+
+        setMyTodos((previousTodos) => {
+            const todoObject = {
+                id: crypto.randomUUID(),
+                description: newTodoDescription
+            };
+
+            return [...previousTodos, todoObject];
+        });
+    }
+
     return (
-        <section className="todos-form-section">
+        <form onSubmit={handleSubmit} className="todos-form-section">
             <label htmlFor="new-todo">New Todo</label>
-            <input type="text" name="new-todo" id="new-todo" />
+            <input onChange={(event) => setNewTodoDescription(event.target.value)} type="text" name="new-todo" id="new-todo" />
             <button>Add Todo</button>
-        </section>
+        </form>
     );
 }
 
