@@ -7,8 +7,8 @@ function Todo({ id, description, setMyTodos }) {
 
     function handleDelete(todoDeleteId) {
         setMyTodos((previousTodos) => {
-            return previousTodos.filter((todo) => {
-                return todo.id !== todoDeleteId;
+            return previousTodos.filter((currentTodo) => {
+                return currentTodo.id !== todoDeleteId;
             });
         });
     }
