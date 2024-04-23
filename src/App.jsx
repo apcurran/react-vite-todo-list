@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="wrapper">
             <NewTodoForm myTodos={myTodos} setMyTodos={setMyTodos} />
-            <TodosList myTodos={myTodos} />
+            <TodosList myTodos={myTodos} setMyTodos={setMyTodos} />
         </div>
     );
 }

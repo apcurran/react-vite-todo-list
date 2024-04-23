@@ -19,12 +19,14 @@ function NewTodoForm({ setMyTodos }) {
 
             return [...previousTodos, todoObject];
         });
+        // reset to empty input after creating new todo
+        setNewTodoDescription("");
     }
 
     return (
         <form onSubmit={handleSubmit} className="todos-form-section">
             <label htmlFor="new-todo">New Todo</label>
-            <input onChange={(event) => setNewTodoDescription(event.target.value)} type="text" name="new-todo" id="new-todo" />
+            <input onChange={(event) => setNewTodoDescription(event.target.value)} value={newTodoDescription} type="text" name="new-todo" id="new-todo" />
             <button>Add Todo</button>
         </form>
     );
