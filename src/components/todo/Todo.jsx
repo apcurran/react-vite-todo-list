@@ -1,8 +1,8 @@
 import "./Todo.css";
 
 function Todo({ id, description, setMyTodos }) {
-    function handleEdit(event) {
-        console.log(event);
+    function handleEdit(todoEditId) {
+        
     }
 
     function handleDelete(todoDeleteId) {
@@ -19,7 +19,8 @@ function Todo({ id, description, setMyTodos }) {
                 <input type="checkbox" />
                 <p>{description}</p>
             </label>
-            <button onClick={(event) => handleEdit(event)}>Edit</button>
+            <button popovertarget="mypopover" onClick={() => handleEdit(id)}>Edit</button>
+            <div popover="auto" id="mypopover">My Popover Content</div>
             <button onClick={() => handleDelete(id)}>Delete</button>
         </li>
     );
