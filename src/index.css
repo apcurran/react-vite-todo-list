@@ -23,6 +23,11 @@ button {
   letter-spacing: .05rem;
 }
 
+[popover] {
+  padding: 0;
+  border: 0;
+}
+
 [popover]::backdrop {
   background-color: rgb(0 0 0 / .65);
 }
