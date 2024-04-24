@@ -41,7 +41,6 @@ function Todo({ id, description, setMyTodos }) {
                 <p>{description}</p>
             </label>
             <button popovertarget="mypopover">Edit</button>
-            {/* TODO: create a form with input and update button for todo description popover */}
             <form onSubmit={(event) => handlePopoverEditSubmit(event, id)} className="popover-form" popover="auto" id="mypopover">
                 <input type="text" value={todoDescriptionEdit} onChange={(event) => setTodoDescriptionEdit(event.target.value)} />
                 <button>Update</button>
