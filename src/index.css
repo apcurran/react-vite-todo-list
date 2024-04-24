@@ -23,6 +23,10 @@ button {
   letter-spacing: .05rem;
 }
 
+input {
+  border: 0;
+}
+
 [popover] {
   padding: 0;
   border: 0;
