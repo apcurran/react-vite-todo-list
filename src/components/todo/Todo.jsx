@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Todo.css";
 
 function Todo({ id, description, setMyTodos }) {
     const [todoDescriptionEdit, setTodoDescriptionEdit] = useState(description);
+    const popoverDivRef = useRef(null);
 
     function handlePopoverEditSubmit(event, todoEditId) {
         event.preventDefault();
@@ -22,8 +23,8 @@ function Todo({ id, description, setMyTodos }) {
                 }
             });
         });
-        // close current popover form
-        event.target.hidePopover();
+        // close current popover form via ref
+        popoverDivRef.current.hidePopover();
     }
 
     function handleDelete(todoDeleteId) {
@@ -41,10 +42,12 @@ function Todo({ id, description, setMyTodos }) {
                 <p>{description}</p>
             </label>
             <button popovertarget="mypopover">Edit</button>
-            <form onSubmit={(event) => handlePopoverEditSubmit(event, id)} className="popover-form" popover="auto" id="mypopover">
-                <input type="text" value={todoDescriptionEdit} onChange={(event) => setTodoDescriptionEdit(event.target.value)} />
-                <button>Update</button>
-            </form>
+            <div ref={popoverDivRef} className="popover" popover="auto" id="mypopover">
+                <form onSubmit={(event) => handlePopoverEditSubmit(event, id)} className="popover-form" >
+                    <input type="text" value={todoDescriptionEdit} onChange={(event) => setTodoDescriptionEdit(event.target.value)} />
+                    <button>Update</button>
+                </form>
+            </div>
             <button onClick={() => handleDelete(id)}>Delete</button>
         </li>
     );

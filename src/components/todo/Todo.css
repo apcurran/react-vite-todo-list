@@ -22,5 +22,8 @@
 }
 
 @scope (.popover-form) {
-
+    :scope {
+        display: flex;
+        flex-direction: column;
+    }
 }
