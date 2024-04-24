@@ -41,8 +41,8 @@ function Todo({ id, description, setMyTodos }) {
                 <input type="checkbox" />
                 <p>{description}</p>
             </label>
-            <button popovertarget="mypopover">Edit</button>
-            <div ref={popoverDivRef} className="popover" popover="auto" id="mypopover">
+            <button popovertarget={`mypopover-todo-${id}`}>Edit</button>
+            <div ref={popoverDivRef} className="popover" popover="auto" id={`mypopover-todo-${id}`}>
                 <form onSubmit={(event) => handlePopoverEditSubmit(event, id)} className="popover-form" >
                     <input type="text" value={todoDescriptionEdit} onChange={(event) => setTodoDescriptionEdit(event.target.value)} />
                     <button>Update</button>
