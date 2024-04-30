@@ -3,7 +3,10 @@ import "./Todo.css";
 
 function Todo({ id, description, setMyTodos }) {
     const [todoDescriptionEdit, setTodoDescriptionEdit] = useState(description);
+    const [isTodoCompleted, setIsTodoCompleted] = useState(false);
     const popoverDivRef = useRef(null);
+    
+    const todoParagraph = isTodoCompleted ? <p className="todo--completed">{description}</p> : <p>{description}</p>;
 
     function handlePopoverEditSubmit(event, todoEditId) {
         event.preventDefault();
@@ -35,11 +38,15 @@ function Todo({ id, description, setMyTodos }) {
         });
     }
 
+    function handleCheckAction(event) {
+        setIsTodoCompleted(event.target.checked);
+    }
+
     return (
         <li className="todo">
             <label>
-                <input type="checkbox" />
-                <p>{description}</p>
+                <input checked={isTodoCompleted} onChange={handleCheckAction} type="checkbox" />
+                {todoParagraph}
             </label>
             <button popovertarget={`mypopover-todo-${id}`}>Edit</button>
             <div ref={popoverDivRef} className="popover" popover="auto" id={`mypopover-todo-${id}`}>
