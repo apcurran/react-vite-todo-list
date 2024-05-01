@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
         "allowJs": true,
-        "jsx": "react-jsx"
+        "jsx": "react-jsx",
+        "types": ["cypress"]
     },
     "include": [
-        "src"
+        "src",
+        "**/*.*"
     ]
 }
 // these are necessary options to prevent errors from React UMD global import
