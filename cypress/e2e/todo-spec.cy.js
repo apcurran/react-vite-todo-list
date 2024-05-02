@@ -9,7 +9,9 @@ describe("Add Todo", () => {
     });
     
     it("Checks for the creation of a new todo", () => {
-        cy.get(".todo").find("p");
+        cy.get(".todo").find("p")
+            .should("be.visible")
+            .and("contain.text", "Walk the dog");
     });
 
     it("Edits 'Walk the dog' todo to become 'Walk the cat'", () => {
