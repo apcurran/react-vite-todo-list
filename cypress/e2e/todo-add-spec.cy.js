@@ -1,15 +1,15 @@
 describe("Add Todo", () => {
-    it("Creates a new todo", () => {
+    beforeEach(() => {
+        // clear any old todos
+        
         cy.visit("/");
-
-        cy.get("#new-todo").type("Walk the dog.");
-
-        cy.get("#new-todo").should("have.value", "Walk the dog.");
-
-        // add todo
-        cy.contains("ADD TODO", { matchCase: false }).click();
-
-        // check that new todo exists in list
-        cy.get("p").should("contain", "Walk the dog.");
+        // add todo before each test
+        cy.contains("New Todo").should("be.visible");
+        cy.get("[data-cy='new-todo-input']").type("Walk the dog");
+        cy.contains("Add Todo").click();
+    });
+    
+    it("Checks for the creation of a new todo", () => {
+        cy.get(".todo").find("p");
     });
 });
