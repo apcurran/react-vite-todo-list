@@ -52,7 +52,7 @@ function Todo({ id, description, setMyTodos }) {
             <div ref={popoverDivRef} className="popover" popover="auto" id={`mypopover-todo-${id}`}>
                 <form onSubmit={(event) => handlePopoverEditSubmit(event, id)} className="popover-form" >
                     <input type="text" value={todoDescriptionEdit} onChange={(event) => setTodoDescriptionEdit(event.target.value)} />
-                    <button>Update</button>
+                    <button type="submit">Update</button>
                 </form>
             </div>
             <button onClick={() => handleDelete(id)}>Delete</button>
