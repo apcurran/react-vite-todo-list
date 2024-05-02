@@ -26,8 +26,8 @@ function NewTodoForm({ setMyTodos }) {
     return (
         <form onSubmit={handleSubmit} className="todos-form-section">
             <label htmlFor="new-todo">New Todo</label>
-            <input onChange={(event) => setNewTodoDescription(event.target.value)} value={newTodoDescription} type="text" name="new-todo" id="new-todo" />
-            <button>Add Todo</button>
+            <input onChange={(event) => setNewTodoDescription(event.target.value)} value={newTodoDescription} type="text" name="new-todo" id="new-todo" data-cy="new-todo-input" />
+            <button type="submit">Add Todo</button>
         </form>
     );
 }
