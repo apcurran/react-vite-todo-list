@@ -18,7 +18,7 @@ describe("Add Todo", () => {
             .and("contain.text", "Walk the dog");
     });
 
-    it("Checks box for todo and ensures proper strike-through styling", () => {
+    it("Checks input box for todo and ensures proper strike-through styling", () => {
         cy.get(".todo").find("input[type='checkbox']").check();
         cy.get(".todo").find("p")
             .should("be.visible")
