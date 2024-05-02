@@ -18,6 +18,13 @@ describe("Add Todo", () => {
             .and("contain.text", "Walk the dog");
     });
 
+    it("Checks box for todo and ensures proper strike-through styling", () => {
+        cy.get(".todo").find("input[type='checkbox']").check();
+        cy.get(".todo").find("p")
+            .should("be.visible")
+            .and("have.class", "todo--completed");
+    });
+
     it("Edits 'Walk the dog' todo to become 'Walk the cat'", () => {
         cy.contains("Edit").click();
         cy.get(".popover-form").find("input").clear();
