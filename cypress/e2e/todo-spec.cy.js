@@ -9,6 +9,10 @@ describe("Add Todo", () => {
     });
     
     it("Checks for the creation of a new todo", () => {
+        // add todo input should clear out after form submission
+        cy.get("[data-cy='new-todo-input']").should("be.empty");
+
+        // todo should be added to list
         cy.get(".todo").find("p")
             .should("be.visible")
             .and("contain.text", "Walk the dog");
