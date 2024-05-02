@@ -1,4 +1,4 @@
-describe("Add Todo", () => {
+describe("Todo tests", () => {
     beforeEach(() => {
         // go to todo app page
         cy.visit("/");
