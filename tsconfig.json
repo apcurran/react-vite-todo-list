@@ -6,7 +6,8 @@
     },
     "include": [
         "src",
-        "**/*.*"
+        "**/*.*",
+        "cypress"
     ]
 }
 // these are necessary options to prevent errors from React UMD global import
